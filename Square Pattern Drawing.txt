@@ -1,0 +1,18 @@
+import pyautogui
+
+def draw_square(x, y, size):
+    # Draw a square
+    pyautogui.moveTo(x, y)
+    pyautogui.dragTo(x + size, y)
+    pyautogui.dragTo(x + size, y + size)
+    pyautogui.dragTo(x, y + size)
+    pyautogui.dragTo(x, y)
+
+# Draw squares using a for loop
+x = 60
+y = 300
+size = 50
+
+for i in range(30):
+    for j in range(10):
+        draw_square(x + i*60, y + j*60, size)
